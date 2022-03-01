@@ -1,18 +1,10 @@
 export interface Itvsearch {
-    showSearch: array
-      show: object
         showName: string
         showStatus: string
-        showGenres: array
+        showGenres: Array<string>
         showSummary: string
-        showSchedule: object
-          scheduleTime: string
-          scheduleDays: array
-    cast: array
-      castPerson: object
-        personName: string
-    seasons: array
-        seasonsId: number
-        seasonsEpisodeOrder: number
+        scheduleTime: string
+        scheduleDays: Array<string>
+        showNetwork: string
 }
 
