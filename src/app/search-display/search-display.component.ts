@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
 import { Itvsearch } from '../itvsearch';
-import { TvmazeService } from '../tvmaze.service';
 
 @Component({
   selector: 'app-search-display',
@@ -8,9 +8,9 @@ import { TvmazeService } from '../tvmaze.service';
   styleUrls: ['./search-display.component.css'],
 })
 export class SearchDisplayComponent implements OnInit {
-  
-  current: Itvsearch
-  constructor(private tvMazeService: TvmazeService) {
+ 
+  @Input() current: Itvsearch
+  constructor() {
     this.current = {
       showName: '',
       showStatus: '',
@@ -18,15 +18,13 @@ export class SearchDisplayComponent implements OnInit {
       showSummary: '',
       scheduleTime: '',
       scheduleDays: [],
-      showNetwork: '' 
-    }
+      showNetwork: '',
+      showImage: '',
+      showLanguage: '',
+      showRuntime: 0,
+      showRating: 0,
+    };
   }
 
-  //dummy input data 'house'
-  ngOnInit(): void {
-    this.tvMazeService.getShowInfo('house').
-    subscribe(data => this.current = data);
-  }
-
-  
+  ngOnInit(): void {}
 }

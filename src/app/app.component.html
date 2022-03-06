@@ -1,29 +1,26 @@
-  <div class="content" role="main">
-      <h1>MTDB</h1>
+  <div id="flexbox-container">
+    <mat-card id="titleAndSearch">
       <div class="spacer"></div>
-      <h2>Movies and TV Shows Database</h2>
+      <br/>
+      <mat-card-title>
+        <h1 id="h1">MTDB</h1>
+      </mat-card-title>
       <div class="spacer"></div>
+      <br/>
+      <mat-card-subtitle>    
+        <h2 id="h2">Movies and TV Shows Database</h2>
+      </mat-card-subtitle> 
 
-      <div>
-        <app-show-search></app-show-search>
+      <div id="searchbar">
+          <app-show-search (searchEvent)="doSearch($event)"></app-show-search>
       </div>
-
-      <mat-card color="primary">
-        <app-search-display></app-search-display>
+    </mat-card>
+      
+    <br/>
+      
+    <div id="result">
+      <mat-card id="resultsDisplay" class="mat-elevation-z0">
+        <app-search-display [current]="currentResult"></app-search-display>
       </mat-card>
-
+    </div>
   </div>
-  
-  
-  <!-- changed to reflect angular material styling  
-  <h1>MTDB</h1>
-  <h2>Movies and TV Shows Database</h2>
-  
-  <div>
-    <app-show-search></app-show-search>
-  </div>
-  
-  <div class="card-container">
-    <app-search-display></app-search-display>
-  </div> -->
-    

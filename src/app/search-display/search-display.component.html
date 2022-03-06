@@ -1,34 +1,54 @@
-<!--
-    not sure how you want to style this, commenting out your code for testing purposes 
-    -copied code into show-search.component.html, I think this is where it should be since that is the search bar functionality?
 
-
-<div class="search-results" *ngIf="results.length">
-    <div class="result-summary">
-        Found {{results.length}} {{results.length == 1 ? 'result' : 'result'}}
-    </div>
-    <div class="result" *ngFor="let result of results;">
-        <img [src]="result.show.image.medium">
-        <div class="content">{{result.show.name}}</div>
-    </div>
+<div *ngIf="!current.showName">
+    No data available
 </div>
--->
+
+<div *ngIf="current.showName" id="showDisplay">
+    
+    <div id="flex-container">
+        
+        
+        <mat-card id="imageDisplay" class="basic-card mat-elevation-z0">
+            <img [src]='current.showImage' />
+        </mat-card>
+        
+        <span class="spacer"></span>
+        
+        
+        <mat-card id="textDisplay" class="basic-card mat-elevation-z0">
+            <mat-card-title>
+                {{current.showName}}
+            </mat-card-title>
+
+            <div class="spacer"></div>
+            <br/>
+
+            <span id="summary">{{current.showSummary}}</span>
+
+            <div class="spacer"></div>
+            <br/>
+
+            <span><span id="label">Language:</span> {{current.showLanguage}}</span>
+            <div class="spacer"></div>
+            <span><span id="label">Genres:</span> {{current.showGenres}}</span>
+            <div class="spacer"></div>
+            <span><span id="label">Rating:</span> {{current.showRating}}</span>
+            <div class="spacer"></div>
 
 
-<div *ngIf = "current.showName">
-    <div id="current show info">
-        <span>{{current.showName}}</span>
-        <br>
-        <span>{{current.showStatus}}</span>
-        <br>
-        <span>{{current.showGenres}}</span>
-        <br>
-        <span>{{current.showSummary}}</span>
-        <br>
-        <span>{{current.scheduleTime}}</span>
-        <br>
-        <span>{{current.scheduleDays}}</span>
-        <br>
-        <span>{{current.showNetwork}}</span>
+            <br/>
+
+            <mat-divider></mat-divider>
+
+            <br/>
+
+            <div class="spacer"></div>
+            <span><span id="label">Production status:</span> {{current.showStatus}}</span>
+            <div class="spacer"></div>
+            <span><span id="label">Runtime:</span> {{current.showRuntime}} minutes</span>
+            <div class="spacer"></div>
+            <span><span id="label">Next showing:</span> {{current.scheduleTime}} {{current.scheduleDays}} on {{current.showNetwork}}</span>
+        </mat-card>      
+       
     </div>
 </div>

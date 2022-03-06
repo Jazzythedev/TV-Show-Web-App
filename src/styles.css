@@ -1,9 +1,11 @@
-html, body { 
-    height: 100%; 
+body{
+    color: #eee;
+    background-color: #282828;
 }
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-color: black;
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
     color: white;
-}
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
